@@ -1,0 +1,45 @@
+CSS
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex; /* Usar flexbox para disposición en columnas */
+}
+
+#map {
+    height: 500px; /* Altura del mapa */
+    width: 70%; /* Ancho del mapa */
+}
+
+.form-container {
+    width: 30%; /* Ancho del contenedor del formulario */
+    padding: 20px;
+    background-color: #f9f9f9; /* Color de fondo del formulario */
+    border-left: 1px solid #ccc; /* Línea separadora */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Colocar elementos en columna */
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    margin-bottom: 10px; /* Espaciado entre los elementos del formulario */
+}
+
+button {
+    padding: 10px;
+}
+
+#userDataContainer {
+    margin-top: 20px; /* Espaciado superior */
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde del contenedor */
+    background-color: #fff; /* Fondo blanco */
+}
+
