@@ -1,36 +1,95 @@
-HTML
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa OSM con Registro de Usuarios</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Gestión de Proyectos con Mapa</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="Script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet-filelayer/leaflet.filelayer.js"></script>
+    <script src="https://unpkg.com/shpjs@latest/dist/shp.min.js"></script>
 </head>
 <body>
-<script src="Script.js"></script>
-</body>
-</html>
-<body>
     <div class="container">
-        <div id="map"></div>
-        <div class="form-container">
-            <h2>Registro de Organización</h2>
+        <header>
+            <h1>Registro de Proyectos Culturales</h1>
+        </header>
+
+        <section class="form-section">
+            <!-- Formulario para registrar proyecto -->
             <form id="userForm">
-                <input type="text" id="orgName" placeholder="Nombre de la Organización" required />
-                <textarea id="activityDescription" placeholder="Descripción de Actividades" required></textarea>
-                <input type="file" id="logoUpload" accept=".jpg, .jpeg" required />
-                <button type="submit">Registrar Ubicación</button>
+                <h2>Registrar Proyecto</h2>
+                <label for="orgName">Nombre de la Organización:</label>
+                <input type="text" id="orgName" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" required>
+
+                <label for="projectDescription">Descripción del Proyecto:</label>
+                <textarea id="projectDescription" required></textarea>
+
+                <button type="submit">Registrar Proyecto</button>
             </form>
-            <div id="userDataContainer"></div> <!-- Contenedor para mostrar los datos -->
-            <button id="downloadCSV">Descargar CSV</button>
-            <button id="downloadSHP">Descargar SHP</button>
-        </div>
+
+            <!-- Formulario para subir archivos KML y SHP -->
+            <form id="uploadForm">
+                <h2>Subir Archivos KML/SHP</h2>
+                <label for="kmlFile">Archivo KML:</label>
+                <input type="file" id="kmlFile" accept=".kml">
+
+                <label for="shpFile">Archivo SHP:</label>
+                <input type="file" id="shpFile" accept=".shp">
+
+                <button type="submit" class="green-button">Subir Archivos</button>
+            </form>
+
+            <!-- Formulario para borrar/corregir proyecto -->
+            <form id="deleteForm">
+                <h2>Borrar/Corregir Proyecto</h2>
+                <label for="deleteProjectName">Nombre de la Organización:</label>
+                <input type="text" id="deleteProjectName" required>
+
+                <label for="deleteEmail">Correo Electrónico:</label>
+                <input type="email" id="deleteEmail" required>
+
+                <button type="submit">Borrar Proyecto</button>
+            </form>
+        </section>
+
+        <section class="map-section">
+            <div id="map"></div>
+
+            <div class="controls">
+                <button id="clearAllMarkers">Borrar Todas las Geolocalizaciones</button>
+
+                <label for="projectSelect">Ir a Proyecto:</label>
+                <select id="projectSelect">
+                    <option value="" disabled selected>Selecciona un Proyecto</option>
+                </select>
+                <button id="goToProject">Ir</button>
+            </div>
+        </section>
+
+        <section class="project-list">
+            <h2>Proyectos Registrados</h2>
+            <ul id="locationList"></ul>
+        </section>
+
+        <!-- Sección para bajar proyectos registrados -->
+        <section class="download-section">
+            <h2>Bajar Proyectos Registrados</h2>
+
+            <div class="download-buttons">
+                <button id="downloadCsv" class="red-button">Descargar CSV</button>
+                <button id="downloadKml" class="red-button">Descargar KML</button>
+                <button id="downloadShp" class="red-button">Descargar SHP</button>
+            </div>
+        </section>
+
     </div>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
     <script src="script.js"></script>
 </body>
 </html>
-
