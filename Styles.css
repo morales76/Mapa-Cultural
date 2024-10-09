@@ -1,45 +1,232 @@
-CSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
 }
 
 .container {
-    display: flex; /* Usar flexbox para disposición en columnas */
+    width: 80%;
+    margin: 20px auto;
 }
 
-#map {
-    height: 500px; /* Altura del mapa */
-    width: 70%; /* Ancho del mapa */
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.form-container {
-    width: 30%; /* Ancho del contenedor del formulario */
+h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+/* Sección para subir archivos */
+.upload-section {
+    background-color: #fff;
     padding: 20px;
-    background-color: #f9f9f9; /* Color de fondo del formulario */
-    border-left: 1px solid #ccc; /* Línea separadora */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.upload-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.upload-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.upload-section input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.upload-section button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.upload-section button:hover {
+    background-color: #0056b3;
+}
+
+.form-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 form {
-    display: flex;
-    flex-direction: column; /* Colocar elementos en columna */
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 45%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"],
-textarea,
-input[type="file"] {
-    margin-bottom: 10px; /* Espaciado entre los elementos del formulario */
+form h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
 }
 
 button {
-    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-#userDataContainer {
-    margin-top: 20px; /* Espaciado superior */
-    padding: 10px;
-    border: 1px solid #ccc; /* Borde del contenedor */
-    background-color: #fff; /* Fondo blanco */
+button:hover {
+    background-color: #218838;
 }
+
+.map-section {
+    position: relative;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.controls button {
+    background-color: #dc3545;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #c82333;
+}
+
+#projectSelect {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+.project-list {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-list h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+/* Resto del CSS permanece igual */
+
+.form-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.green-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+    background-color: #218838;
+}
+.red-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.red-button:hover {
+    background-color: #c82333;
+}
+
 
